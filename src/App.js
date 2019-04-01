@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 
-import 'antd-mobile/dist/antd-mobile.css'
-
-import { Button } from 'antd-mobile'
+import Home from 'pages/home/Home'
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Button>aaa</Button>
-      </div>
+      <Home></Home>
     )
   }
 }
