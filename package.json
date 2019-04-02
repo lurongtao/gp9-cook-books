@@ -8,6 +8,7 @@
     "react": "^16.8.6",
     "react-app-rewired": "^2.1.1",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "styled-components": "^4.2.0"
   },
@@ -15,7 +16,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock": "json-server ./public/mock/mock.js -w -p 9000"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,5 +27,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "http-proxy-middleware": "^0.19.1"
+  }
 }
