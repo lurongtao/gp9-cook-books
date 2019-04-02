@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Swiper from './swiper/Swiper'
+import Swiper from './swiper/views/Swiper'
 import Search from 'components/search/Search'
 
 import {
