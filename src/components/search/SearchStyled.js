@@ -14,6 +14,7 @@ const InputContainer = Styled.div `
   align-items: center;
   justify-content: center;
   background: ${ props => props.bgcolor };
+  border-radius: ${ props => props.radius }px;
   img {
     width: .18rem;
     height: .18rem;

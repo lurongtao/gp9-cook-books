@@ -1,11 +1,12 @@
 import Styled from 'styled-components'
 
 const CookBookContainer = Styled.div `
+  height: 100%;
   display: flex;
   flex-direction: column;
   main {
     flex: 1;
-    overflow-y: scroll;
+    overflow: scroll;
   }
 `
 

@@ -5,6 +5,8 @@
   "dependencies": {
     "antd-mobile": "^2.2.11",
     "babel-plugin-import": "^1.11.0",
+    "better-scroll": "^1.15.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-app-rewired": "^2.1.1",
     "react-dom": "^16.8.6",

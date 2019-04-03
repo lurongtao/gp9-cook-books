@@ -4,6 +4,8 @@ import border from 'components/styled/border'
 const CategoriesContainer = Styled.div `
   display: flex;
   flex-direction: column;
+  height: 100%;
+  background: #fff;
 `
 
 const Header = Styled.header `

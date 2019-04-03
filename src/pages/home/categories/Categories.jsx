@@ -26,12 +26,11 @@ class Categories extends Component {
     return (
       <CategoriesContainer>
         <CategoriesHeader onSwitch={this.handleSwitch}></CategoriesHeader>
-        <main>
-          <Search
-            hasborder={false}
-            bgcolor="#efefef"
-          ></Search>
-        </main>
+        <Search
+          hasborder={false}
+          bgcolor="#efefef"
+          radius={5}
+        ></Search>
         <Switch>
           <Redirect exact from='/' to='/categories' />
           <Route path='/categories' component={CategoriesLeftList}/>
