@@ -9,8 +9,6 @@ import {
   CategoriesContainer
 } from './CategoriesStyled'
 
-// import animate from 'components/animate/animate'
-
 import Search from 'components/search/Search'
 import CategoriesHeader from './CategoriesHeader'
 
