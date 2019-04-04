@@ -4,11 +4,11 @@ import border from '../../styled/border'
 
 const MenuContainer = Styled.div `
   display: flex;
-  flex: 1;
+  /* flex: 1; */
+  height: 100%;
 
   div {
     height: 100%;
-    overflow: scroll;
     &:first-child {
       flex: 93;
       background: #f3f3f3;

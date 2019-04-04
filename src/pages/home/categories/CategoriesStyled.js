@@ -6,6 +6,10 @@ const CategoriesContainer = Styled.div `
   flex-direction: column;
   height: 100%;
   background: #fff;
+  > div:nth-of-type(2) {
+    flex: 1;
+    overflow: hidden;
+  }
 `
 
 const Header = Styled.header `
