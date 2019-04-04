@@ -9,6 +9,7 @@ const CategoriesContainer = Styled.div `
   > div:nth-of-type(2) {
     flex: 1;
     overflow: hidden;
+    position: relative;
   }
 `
 

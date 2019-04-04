@@ -2,19 +2,14 @@ import React, { Component } from 'react'
 
 import {
   Route,
-  Switch,
-  withRouter,
-  Redirect
+  withRouter
 } from 'react-router-dom'
-
-import {
-  TransitionGroup,
-  CSSTransition
-} from 'react-transition-group'
 
 import {
   CategoriesContainer
 } from './CategoriesStyled'
+
+// import animate from 'components/animate/animate'
 
 import Search from 'components/search/Search'
 import CategoriesHeader from './CategoriesHeader'
@@ -41,33 +36,22 @@ class Categories extends Component {
           bgcolor="#efefef"
           radius={5}
         ></Search>
-        <TransitionGroup>
-          <CSSTransition
-            key={this.props.location.key}
-            timeout={300}
-            classNames={{
-              enterActive: "animated " + this.state.enterClass,
-              exitActive: "animated " + this.state.exitClass
-            }}
-          >
-            <Switch>
-              <Redirect exact from='/' to='/categories' />
-              <Route path='/categories' component={CategoriesLeftList}/>
-              <Route path='/material' component={CategoriesRightList}/>
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
+        <div>
+          <Route exact path='/' children={() => <CategoriesLeftList />}/>
+          <Route path='/categories' children={() => <CategoriesLeftList />}/>
+          <Route path='/material' children={() => <CategoriesRightList />}/>
+        </div>
       </CategoriesContainer>
     )
   }
 
   handleSwitch(dir) {
     let path = dir === 'left' ? '/categories' : '/material'
-    this.props.history.push(path)
-    this.setState({
-      enterClass: dir === 'left' ? 'slideInLeft' : 'slideInRight',
-      exitClass: dir === 'left' ? 'slideOutRight' : 'slideOutLeft'
-    })
+    this.props.history.push(path, {dir})
+    // this.setState({
+    //   enterClass: dir === 'left' ? 'slideInLeft' : 'slideInRight',
+    //   exitClass: dir === 'left' ? 'slideOutRight' : 'slideOutLeft'
+    // })
   }
 }
 

@@ -6,6 +6,8 @@ const MenuContainer = Styled.div `
   display: flex;
   /* flex: 1; */
   height: 100%;
+  position: absolute !important;
+  width: 100%;
 
   div {
     height: 100%;

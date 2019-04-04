@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import PropTypes from 'prop-types'
 
@@ -6,15 +6,19 @@ import { connect } from 'react-redux'
 
 import BScroll from 'better-scroll'
 
+import { withRouter } from 'react-router-dom'
+
 import {
   BorderedMenuContainer
 } from './MenuStyled'
+
+import animateComponent from 'components/higeorder/animateComponent'
 
 const mapState = state => ({
   categories: state.menu.categories
 })
 
-class Menu extends Component {
+class Menu extends PureComponent {
   static propTypes = {
     type: PropTypes.string.isRequired
   }
@@ -79,4 +83,4 @@ class Menu extends Component {
   }
 }
 
-export default connect(mapState)(Menu)
+export default connect(mapState)(withRouter(animateComponent(Menu)))
