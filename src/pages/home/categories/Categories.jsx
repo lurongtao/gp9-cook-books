@@ -35,16 +35,16 @@ class Categories extends Component {
           radius={5}
         ></Search>
         <div>
-          <Route exact path='/' children={() => <CategoriesLeftList />}/>
-          <Route path='/categories' children={() => <CategoriesLeftList />}/>
-          <Route path='/material' children={() => <CategoriesRightList />}/>
+          <Route exact path='/home' children={() => <CategoriesLeftList />}/>
+          <Route path='/home/categories' children={() => <CategoriesLeftList />}/>
+          <Route path='/home/material' children={() => <CategoriesRightList />}/>
         </div>
       </CategoriesContainer>
     )
   }
 
   handleSwitch(dir) {
-    let path = dir === 'left' ? '/categories' : '/material'
+    let path = dir === 'left' ? '/home/categories' : '/home/material'
     this.props.history.push(path, {dir})
     // this.setState({
     //   enterClass: dir === 'left' ? 'slideInLeft' : 'slideInRight',

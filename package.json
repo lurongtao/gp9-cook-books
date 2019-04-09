@@ -6,6 +6,7 @@
     "antd-mobile": "^2.2.11",
     "babel-plugin-import": "^1.11.0",
     "better-scroll": "^1.15.1",
+    "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-app-rewired": "^2.1.1",
@@ -15,6 +16,7 @@
     "react-scripts": "2.1.8",
     "react-transition-group": "^2.8.0",
     "redux": "^4.0.1",
+    "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.2.0"
   },

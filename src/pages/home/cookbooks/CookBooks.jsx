@@ -34,6 +34,6 @@ export default class CookBooks extends Component {
   }
 
   componentDidMount() {
-    new BScroll('#cookbook_scroll')
+    new BScroll('#cookbook_scroll', {click: true})
   }
 }

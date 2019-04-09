@@ -18,7 +18,7 @@ export default class HomeList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'category',
+      selectedTab: 'cookbook',
       hidden: false,
       fullScreen: true,
     };

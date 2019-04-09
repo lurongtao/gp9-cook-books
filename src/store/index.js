@@ -1,10 +1,13 @@
 import { createStore, applyMiddleware } from 'redux'
+import Immutable from 'immutable'
 import thunk from 'redux-thunk'
 
 import reducer from './reducer'
 
 const enhancer = applyMiddleware(thunk)
 
-const store = createStore(reducer, enhancer)
+const initialState = Immutable.Map()
+
+const store = createStore(reducer, initialState, enhancer)
 
 export default store

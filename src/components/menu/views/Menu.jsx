@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 
 import BScroll from 'better-scroll'
 
+import { Map, List } from 'immutable'
+
 import {
   BorderedMenuContainer
 } from './MenuStyled'
@@ -15,7 +17,7 @@ import { withRouter } from 'react-router-dom'
 import AnimateComponent from 'components/highorder/AnimateComponent'
 
 const mapState = state => ({
-  categories: state.menu.categories
+  categories: state.getIn(['menu', 'categories'])
 })
 
 class Menu extends PureComponent {
@@ -40,23 +42,23 @@ class Menu extends PureComponent {
   }
   
   render() {
-    let category = this.props.categories.category
-    let material = this.props.categories.material
+    let category = this.props.categories.get('category')
+    let material = this.props.categories.get('material')
 
     let nav = this.props.type === 'category'
-      ? category || {}
-      : material || {}
+      ? category || Map({})
+      : material || Map({})
 
     let content = this.props.type === 'category'
-      ? (category && category[this.state.currentNav]) || []
-      : (material && material[this.state.currentNav]) || []
+      ? (category && category.getIn([this.state.currentNav])) || List([])
+      : (material && material.getIn([this.state.currentNav])) || List([])
 
     return (
       <BorderedMenuContainer>
         <div id={`nav-${this.props.type}`}>
           <ul>
             {
-              Object.keys(nav).map(value => (
+              Object.keys(nav.toJS()).map(value => (
                 <li 
                   key={value}
                   className={this.state.currentNav === value ? 'active' : ''}
@@ -69,8 +71,8 @@ class Menu extends PureComponent {
         <div id={`content-${this.props.type}`}>
           <ul>
             {
-              content.map((value,index) => (
-                <li key={index}>{value.title || value}</li>
+              content.toJS().map((value,index) => (
+                <li onClick={() => this.props.history.push('/list', {id: new Date().getTime()})} key={index}>{value.title || value}</li>
               ))
             }
           </ul>
@@ -85,7 +87,6 @@ class Menu extends PureComponent {
   }
 
   handleNavClick(e, value) {
-    console.log(e.touches[0].clientY - 108)
     this.setState({currentNav: value})
     let currentPos = e.touches[0].clientY - 108
     if (currentPos < 100) {

@@ -6,10 +6,13 @@ import { getListAsync, setIsLoaded } from '../actionCreator'
 
 import SwiperUI from './SwiperUI'
 
-const mapState = state => ({
-  list: state.list.list.slice(0, 3),
-  isLoaded: state.list.isLoaded
-})
+const mapState = state => {
+  // console.log(state.getIn(['list']))
+  return ({
+    list: state.getIn(['list', 'list']).slice(0, 3),
+    isLoaded: state.getIn(['list', 'isLoaded'])
+  })
+}
 
 const mapDispatch = dispatch => ({
   fetchData() {
@@ -37,6 +40,10 @@ class Swiper extends Component {
     this.props.fetchData()
     this.props.initIsLoaded()
   }
+
+  // componentDidMount() {
+  //   console.log(this)
+  // }
 }
 
 export default connect(mapState, mapDispatch)(Swiper)
