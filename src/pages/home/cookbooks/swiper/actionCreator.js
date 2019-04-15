@@ -16,7 +16,7 @@ export const setIsLoaded = isLoaded => ({
 
 export const getListAsync = () => {
   return async dispatch => {
-    let result = await http.get('/api/list')
+    let result = await http.get('/xapi/api/list')
     dispatch(getListSync(result.data))
     dispatch(setIsLoaded(true))
   }

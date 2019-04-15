@@ -4,6 +4,8 @@ import { TabBar } from 'antd-mobile';
 
 import CookBooks from './cookbooks/CookBooks'
 import Categories from './categories/Categories'
+import More from './more/More'
+import Map from './map/Map'
 
 import cookbook from 'assets/images/cookbook.png'
 import cookbookActive from 'assets/images/cookbook-active.png'
@@ -109,7 +111,7 @@ export default class HomeList extends React.Component {
               });
             }}
           >
-            <div>地图</div>
+            <Map></Map>
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: more }}
@@ -123,7 +125,7 @@ export default class HomeList extends React.Component {
               });
             }}
           >
-            <div>dd</div>
+            <More></More>
           </TabBar.Item>
         </TabBar>
       </div>

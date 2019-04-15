@@ -9,7 +9,7 @@ const getCategoriesSync = categories => ({
 
 const getCategoriesAsync = () => {
   return async dispatch => {
-    let result = await http.get('/api/category')
+    let result = await http.get('/xapi/api/category')
     dispatch(getCategoriesSync(result.data))
   }
 }
